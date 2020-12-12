@@ -1,9 +1,9 @@
 # letsinteract
-To empower people who have hearing and speach, visual impairments in group conversations such as conferences or meetings.
+To empower people who have hearing and speech, visual impairments in group conversations such as conferences or meetings.
 
 Resolving Hearing Impairment- The person who is unable to hear can interact in virtual meetings by reading others conversation by speech to text ai model. He can give response normally by speaking.
 
-Resolving Speach Impairment- The person who is unable to speak can interact in virtual meetings by hearing others conversation and response by messaging and that message will convert into speech using text to speech ai microservice. It will helpfull for others who are normal to interact with speak impaired person by hearing his speech of it's ai representative and avoid drawing attention to both message and speech at the same time.
+Resolving Speech Impairment- The person who is unable to speak can interact in virtual meetings by hearing others conversation and response by messaging and that message will convert into speech using text to speech ai microservice. It will helpfull for others who are normal to interact with speak impaired person by hearing his speech of it's ai representative and avoid drawing attention to both message and speech at the same time.
 
 Resolving both Speech and Hearing Impairment- The person who is unable to hear and speak can interact in virtual meetings by reading others conversation by speech to text ai model. He give response by messaging and that message will convert into speech using text to speech ai microservice.
 
