@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+
+{% block css %}
+h1{
+	display:block;
+	color:blue;
+	margin-top:100px;
+	margin-bottom:1.67em;
+	text-align:center;
+	margin-right:0;
+	font-weight:bold;
+	font-size:100px;
+}
+
+
+button{
+	border:none;
+	text-decoration:none;
+	display:inline-block;
+	font-size:16px;
+	cursor:pointer;
+}
+
+button.button1{
+	background-color:orange;
+	margin-right:120px;
+	padding:4px 7px;
+	font-size:14px;
+	margin-left:700px;
+	margin-top:-350px;
+	border-radius:4px;
+	float:right;
+	color:white;
+}
+
+button.button2{
+	background-color:orange;
+	margin-right:2px;
+	margin-left:850px;
+	margin-top:-350px;
+	font-size:14px;
+	padding:4px 7px;
+	border-radius:4px;
+	float:right;
+	color:white;
+}
+
+
+button.button3{
+	color:green;
+	padding:10px 20px;
+	float:center-left;
+	margin-left:500px;
+}
+
+button.button4{
+	color:orange;
+	padding:10px 20px;
+	float:right;
+	margin-right:450px;
+	margin-top:-38px;
+}
+
+button.button5{
+    background-color:#00BFFF;
+    color:white;
+	padding:10px 20px;
+	float:center;
+	margin-bottom:20px;
+}
+
+.popup{
+  background: rgba(0,0,0,0.6);
+  width:100%;
+  height:100%;
+  position:absolute;
+  top:0;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.popup-content{
+  height:220px;
+  width: 400px;
+  background: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  position: relative;
+}
+
+input{
+   margin:20px auto;
+   display: block;
+   width: 70%;
+   padding: 8px;
+   border: 1px solid grey;
+}
+
+
+.close{
+  position:absolute;
+  top:0;
+  right:14px;
+  font-size:42px;
+  transform:rotate(45deg);
+  cursor:pointer;
+}
+{% endblock %}
+
+
+{% block content1 %}
+        <h1>Let's Interact</h1>
+        
+        <div id="root">
+            <div>
+                <button class="button1">SIGN IN</button>
+                <button class="button2">REGISTER</button>
+				<form action="/meeting" method="get">
+				  <button class="button3" >NEW MEETING</button>
+				</form>
+                <button class="button4" id="button4" >JOIN A MEETING</button>
+            </div>
+        </div>
+		
+		<form  action="/meeting" method="post" class="popup" onsubmit="return closeSelf()">
+		  <div class="popup-content">
+		     <h2>Join Meeting</h2>
+			 <div class="close">+</div>
+		     <input type="text" placeholder="Meeting Id" name="meeting_id" id="meeting_id" required />
+			 <input type="password" placeholder="Password" name="password" required />
+			 <button class="button5" id="button5">Join</button>
+		  </div>
+		</form>
+{% endblock %}
+
+{% block javascript2 %} 
+	
+  <script>
+     function closeSelf(){
+	      let username= document.getElementById('meeting_id').value;
+	      if (username)
+		  {
+		     return true;
+		  }
+		  else{
+		     alert('Enter correct details!');
+			 return false;
+		  }
+	 }
+     document.getElementById("button4").addEventListener("click",function(){
+      document.querySelector(".popup").style.display="flex";
+     })
+	 
+	 document.querySelector('.close').addEventListener('click',
+	  function(){
+	    document.querySelector('.popup').style.display='none'
+	  });
+	  
+	   
+  </script>
+{% endblock %}

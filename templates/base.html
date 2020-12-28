@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	    {% block head %}{% endblock %}
+		<style>
+		  {% block css %}{% endblock %}
+		</style>
+		{% block javascript1 %}{% endblock %}
+    </head>
+	
+    <body>
+        <div class="root">
+            {% block content1 %}{% endblock %}
+        </div>
+		{% block content2 %}{% endblock %}
+		{% block javascript2 %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #f22f46;
+  color: white;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #606b85;
+  background: #f4f4f6;
+  min-height: 100%;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+}
+
+div#wrapper{
+	position:relative;
+}
+
+h1{
+  display:block;
+  color:blue;
+  margin-top:-560px;
+  margin-left:10px;
+  margin-right:0;
+  font-weight:bold;
+  font-size:35px;
+  float:left;  
+}
+h2{
+  display:block;
+  color:blue;
+  margin-left:10px;
+  margin-bottom:0.67em;
+  margin-right:0;
+  font-weight:bold;
+  font-size:36px;  
+}
+a {
+  color: #001489;
+}
+
+
+main {
+  padding: 0 0 2em 0;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+main p {
+  margin-bottom: 2em;
+}
+
+main #login {
+  margin: 0 auto;
+}
+main #login[hidden] {
+  display: none;
+}
+
+main form {
+  display: flex;
+  flex-direction: column;
+}
+main form .field {
+  flex-grow: 1;
+  padding: 0 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+
+main form label {
+  align-self: center;
+  margin-bottom: 20px;
+  display: block;
+  width: 100%;
+}
+main form input {
+  font-size: 22px;
+  padding: 0.5em;
+  border: 1px solid #e1e3ea;
+  border-radius: 6px;
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+main form button {
+  background: red;
+  color: #fff;
+  border: 1px solid transparent;
+  font-size: 22px;
+  padding: 0.5em;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.swal-icon img{
+  width: 85px;
+  height: 84px;
+}
+
+
+#login-form{
+	margin-top:-100px;
+}
+
+#impairment_type{
+	font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    margin-top: -60px;
+    margin-right: -150px;
+}
+
+#impairment{
+    flex-grow: 1;
+    padding: 0 1em;
+    display: flex;
+    font-size: 22px;
+    height: 50px;
+    flex-direction: row;
+}
+
+@media screen and (min-width: 720px) {
+  main form .field,
+  main form {
+    flex-direction: row;
+  }
+  main form label {
+    margin-right: 20px;
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  main form input {
+    margin-bottom: 0;
+  }
+}
+
+#chat {
+  margin-top:-120px;
+  flex-grow: 1;
+  padding: 0 0;
+}
+
+#participants {
+  display: grid;
+  background-color:rgba(0,0,0,.87);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+#participants > div {
+    text-align: center;
+}
+
+#participants > div {
+  position: relative;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    margin: 0px 5px;
+    zoom: 103%;
+    transition: transform .2s;
+}
+#participants > div > video {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+}
+
+#participants > div label.label{
+	position:absolute;
+    top:91%;
+	left:48%;
+	font-size:20px;
+    z-index:1;
+	color:white;
+}
+.slide{
+	z-index: 10;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+button#send{
+	z-index: 10;
+    background: white;
+    border: 0px solid transparent;
+    padding: 0px;
+    bottom: 0;
+    position: absolute;
+    width: 450px;
+}
+
+
+.close{
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 36px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  padding: 0px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+    display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	border: 3px solid #f1f1f1;
+	z-index: 9;
+	margin-right: 430px;
+	margin-bottom: 150px;
+}
+
+/* Add styles to the form container */
+.form-container {
+    padding: 5px;
+    background-color: white;
+    width: 460px;
+	height:120px;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+    min-width: 450px;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 80px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+img#bot{
+	width: 65px;
+    z-index: 1;
+    margin-top: -60px;
+    position: absolute;
+    margin-left: 1290px;
+}
+#wrapper.withChat #chat_box {
+    width: calc(100% - 10px);
+    display: grid;
+    grid-template-rows: auto 30px;
+    border-left: 1px solid black;
+    padding: 5px;
+}
+#wrapper:not(withChat) #chat_box {
+    display: none;
+}
+div#chat-scroll {
+    overflow: auto;
+}
+div#chat-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 1em;
+    max-height: 1px;
+}
+
+footer {
+  margin-top:-30px;
+  text-align: center;
+  width: 100%;
+  height:75px;
+  background-color:white;
+  position:fixed;
+  padding:20px;
+  position:absolute;
+}
+
+div#container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button{
+	margin:auto;
+}
+button#voice_chat{
+    align-items: center;
+    background-color: rgb(241 243 244);
+    border-radius: 50%;
+    display: flex;
+    height: var(--icon-size)+12px;
+    justify-content: center;
+    width: var(--icon-size)+12px;
+}
+
+button#end_call{
+	align-items: center;
+    background-color: #FB4040;
+    border-radius: 50%;
+    display: flex;
+    height: var(--icon-size)+22px;
+    justify-content: center;
+    width: var(--icon-size)+22px;
+}
+
+button#video_chat{
+	align-items: center;
+    background-color: rgb(241 243 244);
+    border-radius: 50%;
+    display: flex;
+    height: var(--icon-size)+12px;
+    justify-content: center;
+    width: var(--icon-size)+12px;
+}
+
+button#share_screen{
+	align-items: center;
+    background-color: rgb(241 243 244);
+    border-radius: 2%;
+    display: flex;
+    height: var(--icon-size)+12px;
+    justify-content: center;
+    width: var(--icon-size)+22px;
+}
+
+button#toggle_chat{
+	align-items: center;
+    background-color: rgb(241 243 244);
+    border-radius: 50%;
+	border:none;
+    display: flex;
+    height: var(--icon-size)+12px;
+    justify-content: center;
+    width: var(--icon-size)+12px;
+}
