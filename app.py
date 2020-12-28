@@ -75,7 +75,7 @@ def new_meeting():
 def end_call():
     return redirect('/')
     
-@app.route('/token_access', methods=['POST','GET'])
+@app.route('/token', methods=['POST','GET'])
 def token():
     username = request.get_json(force=True).get('identity')
     if not username:
@@ -94,7 +94,7 @@ def token():
     token.add_grant(VideoGrant(room='My Room'))
     token.add_grant(ChatGrant(service_sid=conversation.chat_service_sid))
 
-    return {'token': token.to_jwt().decode(),
+    return {'token': token.to_jwt().encode().decode(),
             'room': conversation.sid}
 
    

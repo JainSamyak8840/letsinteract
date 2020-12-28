@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
     const identity = identityField.value;
     login.setAttribute("hidden", "true");
     // Fetch the access token
-    fetch("/token_access", {
+    fetch("/token", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -122,9 +122,16 @@ window.addEventListener("load", () => {
 
   function startVideoChat(room, token) {
     // Start video chat and listen to participant connected events
+	impairment= document.getElementById("impairment");
+    impairment_type= impairment.options[impairment.selectedIndex].value;
+	mic_on= true;
+	if(impairment_type=="speech" || impairment_type=="both")
+	{
+			mic_on= false;
+	}
     Twilio.Video.connect(token, {
       room: room,
-      audio: true,
+      audio: mic_on,
       video: true,
     }).then((room) => {
       // Once we're connected to the room, add the local participant to the page
