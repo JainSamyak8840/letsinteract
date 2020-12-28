@@ -1,10 +1,10 @@
 # Let's Interact
 ## Theme: Accessibility
 ## About the idea
+## Web Link - https://letsinteract.herokuapp.com/
 ### Objective:
 To empower people who have hearing and speach, visual impairments in group conversations such as conferences or meetings.
 
-## Web Link - https://letsinteract.herokuapp.com/
 ### Implementation:
 Resolving Hearing Impairment- The person who is unable to hear can interact in virtual meetings by reading others conversation by speech to text ai model. He can give response normally by speaking.
 
