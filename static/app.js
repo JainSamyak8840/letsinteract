@@ -89,7 +89,7 @@ window.addEventListener("load", () => {
     const identity = identityField.value;
     login.setAttribute("hidden", "true");
     // Fetch the access token
-    fetch("/token", {
+    fetch("/token_access", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

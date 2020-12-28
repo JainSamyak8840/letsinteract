@@ -75,7 +75,7 @@ def new_meeting():
 def end_call():
     return redirect('/')
     
-@app.route('/token', methods=['POST'])
+@app.route('/token_access', methods=['POST','GET'])
 def token():
     username = request.get_json(force=True).get('identity')
     if not username:
@@ -124,4 +124,4 @@ def txt2spch(msg):
    p.start()
      
 if __name__ == '__main__':
-    socketio.run(app, host='0.0.0.0', port=5000)
+    socketio.run(app, host='0.0.0.0')
